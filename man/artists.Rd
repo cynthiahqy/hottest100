@@ -3,15 +3,22 @@
 \docType{data}
 \name{artists}
 \alias{artists}
-\title{Information about artists on the TripleJ Hottest 100}
+\title{Triple J Hottest 100 Artists}
 \format{
-A 2729 x 3 data frame
+A data.frame with one row per artist, including variables:
+\describe{
+  \item{artist}{Artist name}
+  \item{country}{Country of origin}
+  \item{releaseyear}{Release year of included track}
+}
+}
+\source{
+Derived from \code{hottest100_tracks}
+}
+\usage{
+artists
 }
 \description{
-\itemize{
-  \item artist
-  \item country
-  \item releaseyear
-}
+A deduplicated dataset of artists represented in the Triple J Hottest 100, created from \code{hottest100_tracks}.
 }
 \keyword{datasets}

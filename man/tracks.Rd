@@ -3,20 +3,27 @@
 \docType{data}
 \name{tracks}
 \alias{tracks}
-\title{Information about tracks on the TripleJ Hottest 100}
+\title{Triple J Hottest 100 Track Data}
 \format{
-A 4200 x 8 data frame
+A data.frame with one row per track, including variables such as:
+\describe{
+  \item{alltime}{Logical; indicates if the entry is from an all-time chart or specific year.}
+  \item{artist}{Character; name of the artist or band associated with the track.}
+  \item{country}{Character; the country associated with the track/chart.}
+  \item{id}{Unique identifier for each track (within year)}
+  \item{pollyear}{Countdown poll year}
+  \item{position}{Chart position of the track.}
+  \item{releaseyear}{Original release year of the track.}
+  \item{track}{Title of the track or song.}
+}
+}
+\source{
+\url{https://www.abc.net.au/triplej/hottest100/archive/search/}
+}
+\usage{
+tracks
 }
 \description{
-\itemize{
-  \item alltime
-.  \item artist
-  \item country
-  \item id
-  \item pollyear
-.  \item position
-  \item releaseyear
-  \item track
-}
+A dataset containing track-level data from the Triple J Hottest 100, scraped on 19 Nov, 2025 from the official Triple J archive.
 }
 \keyword{datasets}

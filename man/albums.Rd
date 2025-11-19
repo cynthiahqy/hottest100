@@ -3,17 +3,24 @@
 \docType{data}
 \name{albums}
 \alias{albums}
-\title{Information about albums on the TripleJ Hottest 100}
+\title{Triple J Hottest 100 Album Data}
 \format{
-A 42 x 5 data frame
+A data.frame with one row per album, including variables such as:
+\describe{
+  \item{year}{The year the Hottest 100 was held.}
+  \item{alltime}{Logical; whether the ranking is considered for an "All-Time" list.}
+  \item{alltimedescription}{A description of the all-time list, if applicable.}
+  \item{colorRGB}{Primary RGB color value associated with the album or year in character format.}
+  \item{contrastColorRGB}{Contrasting RGB color value (in character format) suitable for text overlay.}
+}
+}
+\source{
+\url{https://www.abc.net.au/triplej/hottest100/archive/search/}
+}
+\usage{
+albums
 }
 \description{
-\itemize{
-  \item year
-  \item alltime
-  \item alltimedescription
-  \item colorRGB
-  \item contrastColorRGB
-}
+A dataset containing album information associated with tracks from the Triple J Hottest 100, scraped on 19 Nov, 2025 from the official Triple J archive.
 }
 \keyword{datasets}
