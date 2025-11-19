@@ -23,6 +23,5 @@ type_track <- type_object(
   release_year = type_integer(),
   track_genre = type_string(),
   track_cover = type_boolean(),
-  artist_gender = type_string(),
-  aggressively_australian = type_boolean()
+  # aggressively_australian = type_boolean()
 )
