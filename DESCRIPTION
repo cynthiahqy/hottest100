@@ -24,6 +24,7 @@ Authors@R:
              role = c("aut"), 
              comment = c(ORCID = "0000-0002-3813-7155")))
 Description: This is a data package containing records from <https://www.abc.net.au/triplej/countdown/hottest100/australiansongs> in November 2025.
+URL: https://github.com/katerobsau/hottest100
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

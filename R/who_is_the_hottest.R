@@ -1,13 +1,20 @@
+#' Find the best in any year
+#'
+#' This function will help searching for information by year
+#'
+#' @export
+#' @examples
+#' who_is_the_hottest(2023)
 who_is_the_hottest <- function(year, special = NULL){
 
-  year_range = hottest100_tracks$pollyear |> range()
+  year_range = tracks$pollyear |> range()
 
   if(year < min(year_range) | year > max(year_range))
     stop("Sorry that countdown isn't in this dataset.")
 
   if(is.null(special)){
 
-    countdown_winner = hottest100_tracks |>
+    countdown_winner = tracks |>
       filter(pollyear == year & position == 1 & alltime == FALSE)
 
     if(nrow(countdown_winner) == 0)
@@ -17,7 +24,7 @@ who_is_the_hottest <- function(year, special = NULL){
 
   }else{
 
-    countdown_winner = hottest100_tracks |>
+    countdown_winner = tracks |>
       filter(pollyear == year & position == 1 & alltime == TRUE)
 
     output_str = glue("For the special countdown in {year} - {countdown_winner$artist} was the hottest!")

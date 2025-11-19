@@ -1,3 +1,10 @@
+#' Get the facts
+#'
+#' This function will help searching for information
+#'
+#' @export
+#' @examples
+#' get_factd()
 get_factd <- function(){
 
   num_facts = 6
@@ -5,7 +12,7 @@ get_factd <- function(){
 
   # Who has the most entries ever
   if(factd == 1){
-    most_entries = hottest100_tracks |>
+    most_entries = tracks |>
       group_by(artist) |>
       count() |>
       ungroup() |>
@@ -17,7 +24,7 @@ get_factd <- function(){
 
   # Who has the most entries in regular countdowns ever
   if(factd == 2){
-    most_entries_reg = hottest100_tracks |>
+    most_entries_reg = tracks |>
       filter(alltime == FALSE) |>
       group_by(artist) |>
       count() |>
@@ -32,7 +39,7 @@ get_factd <- function(){
   # Who has the most entries in the top 10 ever
   if(factd == 3){
 
-    most_entries_top10 = hottest100_tracks |>
+    most_entries_top10 = tracks |>
       filter(position <= 10) |>
       group_by(artist) |>
       count() |>
@@ -47,7 +54,7 @@ get_factd <- function(){
   # Who has the most entries in the top 10 regular countdowns ever
   if(factd == 4){
 
-    most_entries_top10_reg = hottest100_tracks |>
+    most_entries_top10_reg = tracks |>
       filter(position <= 10 & alltime == FALSE) |>
       group_by(artist) |>
       count() |>
@@ -61,7 +68,7 @@ get_factd <- function(){
 
   # Who has appeared in the most number of countdowns
   if(factd == 5){
-    num_countdowns = hottest100_tracks |>
+    num_countdowns = tracks |>
       group_by(artist, pollyear, alltime) |>
       count() |>
       ungroup() |>
@@ -75,7 +82,7 @@ get_factd <- function(){
   # Who has appeared in the most number of reg countdowns
   if(factd == 6){
 
-    num_countdowns_reg = hottest100_tracks |>
+    num_countdowns_reg = tracks |>
       filter(alltime == FALSE) |>
       group_by(artist, pollyear) |>
       count() |>
